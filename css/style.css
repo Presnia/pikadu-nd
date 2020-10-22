@@ -1,11 +1,29 @@
+@font-face {
+  font-family: "SFProDisplay-Regular";
+  src: local("SFProDisplay-Regular"),
+    url('../fonts/SFProDisplay-Regular.woff') format("woff"),
+    url('../fonts/SFProDisplay-Regular.woff2') format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "SFProDisplay-Semibold";
+  src: local("SFProDisplay-Semibold"),
+    url('../fonts/SFProDisplay-Semibold.woff') format("woff"),
+    url('../fonts/SFProDisplay-Semibold.woff2') format("woff2");
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
 }
 body {
-  font-family: sans-serif;
+  font-family: "SFProDisplay-Regular",
+  sans-serif;
   background: #E5E5E5;
 }
 .header {
+  position: fixed;
+  width: 100%;
   background: #FA8C16;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -95,11 +113,15 @@ body {
   max-width: 1200px;
   width: 90%;
   margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 .posts {
-  max-width: 800px;
+  width: 67%;
 }
 .post-body {
+  margin-top: 62px;
   padding-top: 35px;
   padding-left: 35px;
   padding-right: 35px;
@@ -111,6 +133,7 @@ body {
   margin-bottom: 30px;
 }
 .post-title {
+  font-family: "SFProDisplay-Semibold", sans-serif;
   margin-top: 0;
   margin-bottom: 19px;
   font-weight: 600;
@@ -190,5 +213,156 @@ body {
   font-size: 12px;
   line-height: 20px;
   text-decoration: none;
-  
+}
+.sidebar {
+  width: 31%;
+  margin-top: 62px;
+}
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FAFAFA;
+  border: 1px solid #E8E8E8;
+  padding: 15px 25px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.user-avatar {
+  border-radius: 50%;
+  margin-right: 17px;
+}
+.user-name {
+  font-family: "SFProDisplay-Semibold",
+  sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #595959;
+}
+.icon-exit {
+  width: 20px;
+  height: 20px;
+  fill: #595959;
+  ;
+}
+
+.sidebar-nav {
+  background-color: #fff;
+}
+.sidebar-menu {
+  margin: 0;
+  border: 1px solid #E8E8E8;
+  border-top: none;
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar-menu-link {
+  display: inline-block;
+  padding: 16px 48px;
+  width: 100%;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 22px;
+  color: #595959;
+}
+.sidebar-menu-link:hover {
+  background-color: #FFFBE6;
+  color: #FAAD14;
+}
+.sidebar-menu-link.active {
+  background-color: #FFFBE6;
+  border-right: 3px solid #FAAD14;
+  color: #FAAD14;
+}
+.button {
+  background-color: #FAAD14;
+  border-radius: 4px;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 13px;
+}
+.button-new-post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+.icon-fire {
+  fill: #FFFFFF;
+  margin-right: 10px;
+}
+.button-new-post:hover {
+  background-color: #fdbd3e;
+}
+.card {
+  background-color: #fff;
+  border: 1px solid #E8E8E8;
+  margin-top: 20px;
+}
+.card-header {
+  background: #FAFAFA;
+  border-bottom: 1px solid #E8E8E8;
+  box-sizing: border-box;
+  margin-bottom: 22px;
+  padding: 23px 25px;
+  margin: 0;
+}
+.card-title {
+  font-family: "SFProDisplay-Semibold",
+  sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #595959;
+  margin: 0;
+}
+.card-body {
+  padding: 22px 40px 20px 25px;
+}
+.card-body-title {
+  margin: 0;
+  font-family: "SFProDisplay-Semibold",
+  sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #D48806;
+  text-decoration: none;
+}
+.card-text {
+  margin: 10px 0;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #262626;
+}
+.promo {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  height: 260px;
+  background: #fff url('../img/advertising.png') no-repeat center center / cover;
+  border: 1px solid #E8E8E8;
+  position: relative;
+  z-index: -1;
+}
+.promo::before {
+  content: 'Реклама';
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #C4C4C4;
+  color: #FFFFFF;
+  width: 100px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 20px;
 }
